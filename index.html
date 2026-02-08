@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noone Studio | The Future</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+    <div class="scanlines"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-circle"></div>
+
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="studio-title">NOONE <span class="highlight">STUDIO</span></h1>
+            <div class="status-line">
+                <span class="pulse-dot"></span> SYSTEM ONLINE
+            </div>
+        </header>
+
+        <main class="games-hub-square" id="tilt-card">
+            <div class="games-grid">
+                <div class="game-item active" onclick="openGameDetails('neon-shock')" style="cursor: pointer;">
+                    <div class="game-preview" style="pointer-events: none;">
+                        <div class="neon-ring"></div>
+                        <h2 class="game-title">NEON SHOCK</h2>
+                    </div>
+                    <div class="game-details" style="pointer-events: none;">
+                        <p>High-velocity arcade survival.</p>
+                        <div class="cyber-btn">
+                            <span class="btn-content">ACCESS DATA</span>
+                            <span class="btn-glitch"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="game-item locked">
+                    <div class="game-preview">
+                        <div class="lock-icon">🔒</div>
+                        <h2 class="game-title">PROJECT: X</h2>
+                    </div>
+                    <div class="game-details">
+                        <p>Classified Data.</p>
+                        <button class="cyber-btn disabled">LOCKED</button>
+                    </div>
+                </div>
+
+                 <div class="game-item locked">
+                    <div class="game-preview">
+                        <div class="lock-icon">🔒</div>
+                        <h2 class="game-title">PROJECT: Y</h2>
+                    </div>
+                    <div class="game-details">
+                        <p>Coming Soon.</p>
+                        <button class="cyber-btn disabled">LOCKED</button>
+                    </div>
+                </div>
+                 <div class="game-item locked">
+                    <div class="game-preview">
+                        <div class="lock-icon">🔒</div>
+                        <h2 class="game-title">PROJECT: Z</h2>
+                    </div>
+                    <div class="game-details">
+                        <p>Coming Soon.</p>
+                        <button class="cyber-btn disabled">LOCKED</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="right-sidebar">
+            <div class="sidebar-container">
+                <div class="sidebar-header">FOLLOW ME</div>
+                
+                <a href="https://www.youtube.com/@No_one.z-" target="_blank" class="sidebar-card yt">
+                    <div class="icon-box">YT</div>
+                    <div class="text-box">
+                        <span class="name">No_one.z</span>
+                        <span class="sub">Subscribe</span>
+                    </div>
+                </a>
+
+                <a href="https://discord.gg/z6Ws4fu7zx" target="_blank" class="sidebar-card dc">
+                    <div class="icon-box">DC</div>
+                    <div class="text-box">
+                        <span class="name">Discord</span>
+                        <span class="sub">Join Community</span>
+                    </div>
+                </a>
+                
+                <div class="sidebar-divider"></div>
+
+                <div id="abdo-sidebar" class="hidden">
+                    <a href="https://www.youtube.com/@Dr-Abdo123" target="_blank" class="sidebar-card yt-mini">
+                        <div class="icon-box-mini">YT</div>
+                        <span class="name-mini">Dr.Abdo</span>
+                    </a>
+                    <a href="https://discord.gg/ZzrpDvMFJK" target="_blank" class="sidebar-card dc-mini">
+                        <div class="icon-box-mini">DC</div>
+                        <span class="name-mini">Community</span>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <div class="modal-overlay" id="game-modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeGameDetails()">×</button>
+                <h2 class="modal-title" id="modal-title">GAME TITLE</h2>
+                <div class="modal-body">
+                    <p id="modal-desc">Game description goes here.</p>
+                </div>
+                <div class="modal-actions">
+                    <a href="#" id="modal-play-btn" target="_blank" class="cyber-btn">INITIALIZE</a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="crew-dock">
+            <div class="crew-title">THE ARCHITECTS</div>
+            <div class="crew-grid">
+                <div class="crew-card">
+                    <div class="crew-avatar noone">N</div>
+                    <div class="crew-info">
+                        <h3>No_one.z</h3>
+                        <span class="role">Lead Dev</span>
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@No_one.z-" target="_blank" class="social-link yt">YT</a>
+                            <a href="https://discord.gg/z6Ws4fu7zx" target="_blank" class="social-link dc">DC</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="crew-card" id="dr-abdo-card" onclick="toggleAbdoSidebar()">
+                    <div class="crew-avatar abdo">D</div>
+                    <div class="crew-info">
+                        <h3>Dr.Abdo</h3>
+                        <span class="role">Director</span>
+                        <div class="social-links">
+                            <a href="https://www.youtube.com/@Dr-Abdo123" target="_blank" class="social-link yt">YT</a>
+                            <a href="https://discord.gg/ZzrpDvMFJK" target="_blank" class="social-link dc">DC</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="crew-card">
+                    <div class="crew-avatar potato">P</div>
+                    <div class="crew-info">
+                        <h3>PotatoCaht</h3>
+                        <span class="role">Support</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
