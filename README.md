@@ -1,4 +1,4 @@
-# Neon Shock
+# Neon Shock (2D)
 
 ## "Survive the Glitch. Master the Grid."
 
