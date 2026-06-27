@@ -47,5 +47,4 @@ Studio:
 https://noone-studios.vercel.app
 
 ---
-
-This is an ongoing project and I plan to keep improving it with more content and features.
+(This project was stoppep.)
